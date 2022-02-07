@@ -1,0 +1,41 @@
+NamingConventions is considered one of the best practice to achieve clean code.There are many ways to write a program for a computer to understand but it is also as imaportant to write a code so that fellow programmer or developer can understand this what makes one better developer.In Programming language following Name conventions are used for different components in the program:
+Consider an Example of StringBuilder Class:
+Naming Convention Rules for Class:
+Class name should start with capital letter,if there is any word to be associated camel casing rule need to be followed i.e., making the starting letter of word capital
+
+
+Example:
+
+class stringbuilder{  //Incorrect Naming Convention
+}
+  
+class StringBuilder{  //Correct Naming Convention
+}
+  
+Naming Convention Rules for methods:
+Method names should start with lower case letter if any word nedd to be associated camel casing rule need to followed:
+ 
+Example:
+
+public void Append(){  //Incorrect Naming Convention
+}
+ 
+public void append(){  //correct Naming Convention
+}
+  
+
+public void tostring(){  //Incorrect Naming Convention
+}
+
+public void toString(){  //correct Naming Convention
+}
+
+
+
+Naming Convention Rules for variables:
+variable names must be started with letter or underscore it is always better to write meaningful name
+ 
+Example:
+ 
+int 9var;   //Incorrect naming Convention
+int var;    //Correct Naming Convention
