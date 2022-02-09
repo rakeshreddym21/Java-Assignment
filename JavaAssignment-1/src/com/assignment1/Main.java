@@ -25,7 +25,7 @@ public class Main {
             System.out.println("Enter the regex pattern or 0 to exit code");
             reg = input.nextLine();
             Pattern pattern = Pattern.compile(reg);
-            if(reg.charAt(0)=='0' && reg.length()==1)           //to exit code
+            if(reg.equalsIgnoreCase("0"))           //to exit code
             {
                 break;
             }
