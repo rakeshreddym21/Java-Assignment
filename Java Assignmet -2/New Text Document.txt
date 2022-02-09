@@ -1,0 +1,2 @@
+  str=str.replaceAll("(.)(?=.*\\1)", "");
+        int size=str.length();
