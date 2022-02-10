@@ -1,6 +1,6 @@
 package com.assignment;
 
-}
+
 public class Singleton {
     private static Singleton s = new Singleton();
     private String str;
@@ -15,5 +15,6 @@ public class Singleton {
 
     public void print() {
         System.out.println(str);
+
     }
 }

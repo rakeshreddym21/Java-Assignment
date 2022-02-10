@@ -12,8 +12,8 @@ public class Data {
     {
         int i;
          char c;
-       /* System.out.println(i);          //Local variables doesn't have default value and local variables needs
-       System.out.println(c);*/           //to be initialized
+      /* System.out.println(i);          //Local variables doesn't have default value and local variables needs
+       System.out.println(c);       */  //to be initialized
 
     }
 }

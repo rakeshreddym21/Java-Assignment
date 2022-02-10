@@ -7,8 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String pat = "[A-Z]{1}[[\\w][\\d][\\s][\\S][\\W][\\D]]*[\\.]{1}"; //Regex Pattern to check sentence starting
-        String in;                                                         //with Capital letter and ending with period(.)
+        String pat="^[A-Z][a-zA-Z0-9_-]*[.]$";                              //Regex Pattern to check sentence starting
+        //String pat = "[A-Z]{1}[[\\w][\\d][\\s][\\S][\\W][\\D]]*[\\.]{1}"; //with Capital letter and ending with period(.)
+        String in;
         while (true) {
             System.out.println("Enter the Sentence or 0 to exit code:");
             in = input.nextLine();
