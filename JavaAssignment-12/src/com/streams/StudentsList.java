@@ -29,48 +29,48 @@ public class StudentsList {
     }
      //All the names of department in college
     public void getDepartments() {
-        studentList.stream().map(Student::getEngDepartment).distinct().forEach(System.out::println);
+        studentList.stream().map(s->s.engDepartment).distinct().forEach(System.out::println);
 
     }
         //Students Enrolled after year
     public void EnrolledAfter2018() {
-        studentList.stream().filter(s -> s.getYear_of_enrollment()>2018).forEach((Student s) -> System.out.println(s.getName()));
+        studentList.stream().filter(s -> s.year_of_enrollment>2018).forEach((Student s) -> System.out.println(s.name));
     }
            //Students who are male cse students
     public void getMaleComputerStudents() {
-        studentList.stream().filter(s -> s.getGender().equals("Male") && s.getEngDepartment().equals("Computer Science")).forEach(s -> System.out.println(s.getInfo()));
+        studentList.stream().filter(s -> s.gender.equals("Male") && s.engDepartment.equals("Computer Science")).forEach(s -> System.out.println(s.getFullInfo()));
     }
             // No. of MAles and females
     public void MalesAndFemales() {
-        System.out.println(studentList.stream().collect(Collectors.groupingBy(Student::getGender, Collectors.counting())));
+        System.out.println(studentList.stream().collect(Collectors.groupingBy(s->s.gender, Collectors.counting())));
     }
 //Average age
     public void avgAgeOfMalesAndFemales() {
         System.out.println("Average age of males and Females");
-        System.out.println(studentList.stream().collect(Collectors.groupingBy(Student::getGender, Collectors.averagingDouble(Student::getAge))));
+        System.out.println(studentList.stream().collect(Collectors.groupingBy(s->s.gender, Collectors.averagingDouble(s->s.age))));
     }
 //Highest percentage of student among list
     public void detailsOfHighestPercentageStudent() {
-        System.out.println(studentList.stream().max(Comparator.comparingDouble(s->s.getPerTillDate())).get());
+        System.out.println(studentList.stream().max(Comparator.comparingDouble(s->s.perTillDate)).get());
 
     }
 //Number of Students in Each dept.
     public void numOfStudentsInEachDept() {
-        System.out.println(studentList.stream().collect(Collectors.groupingBy(Student::getEngDepartment, Collectors.counting())));
+        System.out.println(studentList.stream().collect(Collectors.groupingBy(s->s.engDepartment, Collectors.counting())));
     }
 //Avg percentage in each dept.
     public void avgPercentageInEachDept() {
-        System.out.println(studentList.stream().collect(Collectors.groupingBy(Student::getEngDepartment, Collectors.averagingDouble(Student::getPerTillDate))));
+        System.out.println(studentList.stream().collect(Collectors.groupingBy(s->s.engDepartment, Collectors.averagingDouble(s->s.perTillDate))));
 
     }
 //Youngest Male student in electronics
     public void youngestMaleInElectronics() {
-        System.out.println( studentList.stream().filter(s -> s.getEngDepartment().equals("Electronic")).collect(Collectors.minBy(Comparator.comparingInt(s->s.getAge()))).get().getInfo());
+        System.out.println( studentList.stream().filter(s -> s.engDepartment.equals("Electronic")).collect(Collectors.minBy(Comparator.comparingInt(s->s.age))).get().getFullInfo());
 
     }
 //Number of males and females in cse
     public void malesAndFemalesInCS() {
-        System.out.println(studentList.stream().filter(s -> s.getEngDepartment().equals("Computer Science")).collect(Collectors.groupingBy(Student::getGender, Collectors.counting())));
+        System.out.println(studentList.stream().filter(s -> s.engDepartment.equals("Computer Science")).collect(Collectors.groupingBy(s->s.gender, Collectors.counting())));
 
     }
 }

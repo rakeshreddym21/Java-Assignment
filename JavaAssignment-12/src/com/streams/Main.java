@@ -6,5 +6,7 @@ public class Main {
         StudentsList student = new StudentsList();
      // student.youngestMaleInElectronics();
       student.MalesAndFemales();
+      student.EnrolledAfter2018();
+      student.getDepartments();
     }
 }
