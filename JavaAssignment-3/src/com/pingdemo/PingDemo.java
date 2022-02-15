@@ -13,12 +13,12 @@ public class PingDemo {
         ArrayList<Integer> arr=new ArrayList<>();
         Process pingProcess = Runtime.getRuntime().exec(cmd);
         BufferedReader inputStream = new BufferedReader(new InputStreamReader(pingProcess.getInputStream()));
-        String reader;
-        while ((reader = inputStream.readLine()) != null) {
-            if(reader.contains("Reply"))
+        String lineReader;
+        while ((lineReader = inputStream.readLine()) != null) {
+            if(lineReader.contains("time="))
             {
-                System.out.println(reader);
-                getInt=reader.substring(reader.indexOf("time=") + 5, reader.indexOf("ms"));
+                System.out.println(lineReader);
+                getInt=lineReader.substring(lineReader.indexOf("time=") + 5, lineReader.indexOf("ms"));
                 int n=Integer.valueOf(getInt);
                 arr.add(n);                         //Storing the time in integer arraylist
             }
@@ -27,11 +27,11 @@ public class PingDemo {
         int size= arr.size();                    //Getting median
         if(size%2!=0 && size!=0)
         {
-            System.out.print("Median of Ping:");
+            System.out.print("Median of time taken to Ping:");
             System.out.println(arr.get(size/2)+"ms");
         }
         else if(size!=0){
-            System.out.print("Median of Ping:");
+            System.out.print("Median of time taken to Ping:");
             int avg=(arr.get(size/2)+arr.get(size/2-1))/2;
             System.out.println(avg+"ms");
         }
